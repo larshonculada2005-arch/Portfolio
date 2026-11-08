@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Lars Steve — Student Developer & Aspiring Software Engineer. Portfolio showcasing projects in web, mobile, and software development." />
+  <meta name="keywords" content="student developer, software engineer, web development, portfolio, Android, PHP, JavaScript" />
+  <meta property="og:title" content="Lars Steve | Developer Portfolio" />
+  <meta property="og:description" content="Student Developer & Aspiring Software Engineer" />
+  <meta property="og:type" content="website" />
+  <title>Lars Steve | Developer Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Phosphor Icons -->
+  <script src="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/index.js" defer></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+<body>
+
+  <!-- ─── NAVBAR ─────────────────────────────────────────────── -->
+  <header class="navbar" id="navbar" role="banner">
+    <nav class="nav-container" aria-label="Main navigation">
+      <a href="#hero" class="nav-logo" aria-label="Lars Steve — Home">
+        <img src="images/2.png" alt="Lars Steve Logo" class="logo-img" />
+      </a>
+
+      <ul class="nav-links" role="list" id="navLinks">
+        <li><a href="#about"     class="nav-link">About</a></li>
+        <li><a href="#skills"    class="nav-link">Skills</a></li>
+        <li><a href="#projects"  class="nav-link">Projects</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#contact"   class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode" title="Toggle theme">
+          <i class="ph ph-sun"  id="iconSun"  aria-hidden="true"></i>
+          <i class="ph ph-moon" id="iconMoon" aria-hidden="true"></i>
+        </button>
+        <a href="assets/resume.pdf" download class="btn btn-outline btn-sm" aria-label="Download resume">
+          <i class="ph ph-download-simple" aria-hidden="true"></i> Resume
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Open mobile menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ─── HERO ──────────────────────────────────────────────── -->
+    <section class="hero" id="hero" aria-label="Hero introduction">
+      <div class="hero-bg-grid" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow-1" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow-2" aria-hidden="true"></div>
+
+      <div class="container hero-content">
+        <div class="hero-badge reveal">
+          <span class="badge-dot" aria-hidden="true"></span>
+          Available for opportunities
+        </div>
+
+        <h1 class="hero-name reveal">
+        Hi, I'm <span class="gradient-text">Lars Steve</span>
+        </h1>
+
+        <p class="hero-role reveal">
+          <span class="typewriter" id="typewriter" aria-label="Student Developer & Aspiring Software Engineer"></span>
+          <span class="cursor" aria-hidden="true">|</span>
+        </p>
+
+        <p class="hero-intro reveal">
+          A passionate student developer building real-world solutions through web, mobile,
+          and software development. I love turning ideas into clean, functional products.
+        </p>
+
+        <div class="hero-cta reveal">
+          <a href="#projects" class="btn btn-primary">
+            <i class="ph ph-rocket-launch" aria-hidden="true"></i> View Projects
+          </a>
+          <a href="assets/resume.pdf" download class="btn btn-ghost">
+            <i class="ph ph-download-simple" aria-hidden="true"></i> Download Resume
+          </a>
+        </div>
+
+        <div class="hero-socials reveal">
+          <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub profile">
+            <i class="ph ph-github-logo" aria-hidden="true"></i>
+          </a>
+          <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn profile">
+            <i class="ph ph-linkedin-logo" aria-hidden="true"></i>
+          </a>
+          <a href="mailto:larshonculada2005@gmail.com" class="social-link" aria-label="Send email">
+            <i class="ph ph-envelope-simple" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-scroll" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ─── ABOUT ─────────────────────────────────────────────── -->
+    <section class="section" id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Get to know me</span>
+          <h2 class="section-title" id="about-heading">About Me</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-image reveal">
+            <div class="image-frame" aria-label="Profile photo of Lars Steve">
+              <img src="images/1.jpg" alt="Lars Steve" class="profile-photo" />
+
+              <!-- Broken glass shards overlay -->
+              <div class="glass-shards" aria-hidden="true">
+                <div class="glass-shard"></div>
+                <div class="glass-shard"></div>
+                <div class="glass-shard"></div>
+                <div class="glass-shard"></div>
+                <div class="glass-shard"></div>
+                <div class="glass-shard"></div>
+                <div class="glass-shard"></div>
+              </div>
+
+              <!-- Crack lines SVG -->
+              <svg class="glass-crack" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <g stroke="rgba(255,255,255,0.55)" stroke-width="1" fill="none" stroke-linecap="round">
+                  <!-- main crack lines radiating from a center point -->
+                  <line x1="122" y1="144" x2="0"   y2="96"  />
+                  <line x1="122" y1="144" x2="122"  y2="0"   />
+                  <line x1="122" y1="144" x2="176"  y2="122" />
+                  <line x1="176" y1="122" x2="320"  y2="64"  />
+                  <line x1="176" y1="122" x2="320"  y2="192" />
+                  <line x1="122" y1="144" x2="192"  y2="224" />
+                  <line x1="192" y1="224" x2="144"  y2="320" />
+                  <line x1="192" y1="224" x2="320"  y2="320" />
+                  <line x1="122" y1="144" x2="32"   y2="208" />
+                  <line x1="32"  y1="208" x2="0"    y2="320" />
+                  <!-- secondary micro-cracks -->
+                  <line x1="122" y1="0"   x2="60"   y2="60"  stroke-width="0.5" stroke="rgba(255,255,255,0.3)" />
+                  <line x1="176" y1="122" x2="240"  y2="80"  stroke-width="0.5" stroke="rgba(255,255,255,0.3)" />
+                  <line x1="32"  y1="208" x2="80"   y2="260" stroke-width="0.5" stroke="rgba(255,255,255,0.3)" />
+                </g>
+                <!-- impact point glow -->
+                <circle cx="149" cy="133" r="4" fill="rgba(255,255,255,0.6)" />
+                <circle cx="149" cy="133" r="10" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1" />
+              </svg>
+
+              <div class="image-frame-border" aria-hidden="true"></div>
+            </div>
+          </div>
+
+          <div class="about-text reveal">
+            <p class="about-intro">
+              I'm a <strong>student developer</strong> with a strong passion for creating
+              software that makes a difference. Currently pursuing my degree in
+              <strong>Bachelor of Science in Information Technology</strong> at <strong>Holy Cross of Davao College</strong>,
+              I've spent my academic years building projects that bridge the gap between
+              theory and real-world application.
+            </p>
+
+            <p>
+              I thrive at the intersection of design and development — crafting interfaces
+              that are both beautiful and functional. Whether it's a web app, a mobile
+              solution, or a full-stack system, I bring the same attention to detail and
+              drive to every project.
+            </p>
+
+            <div class="about-highlights">
+              <div class="highlight-item">
+                <i class="ph ph-graduation-cap" aria-hidden="true"></i>
+                <div>
+                  <strong>BSIT — 2nd Year</strong>
+                  <span>Holy Cross of Davao College</span>
+                </div>
+              </div>
+              <div class="highlight-item">
+                <i class="ph ph-map-pin" aria-hidden="true"></i>
+                <div>
+                  <strong>Davao City, Philippines</strong>
+                  <span>Based here, open to remote</span>
+                </div>
+              </div>
+              <div class="highlight-item">
+                <i class="ph ph-calendar-blank" aria-hidden="true"></i>
+                <div>
+                  <strong>Expected Graduation:--</strong>
+                  <span>Currently in 2nd year</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-interests">
+              <span class="interest-tag"><i class="ph ph-globe" aria-hidden="true"></i> Web Development</span>
+              <span class="interest-tag"><i class="ph ph-device-mobile" aria-hidden="true"></i> Mobile Development</span>
+              <span class="interest-tag"><i class="ph ph-code" aria-hidden="true"></i> Software Engineering</span>
+              <span class="interest-tag"><i class="ph ph-paint-brush" aria-hidden="true"></i> UI/UX Design</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SKILLS ────────────────────────────────────────────── -->
+    <section class="section section-alt" id="skills" aria-labelledby="skills-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">What I work with</span>
+          <h2 class="section-title" id="skills-heading">Skills & Technologies</h2>
+        </div>
+
+        <div class="skills-grid">
+
+          <!-- Frontend -->
+          <div class="skill-category reveal">
+            <div class="skill-category-header">
+              <i class="ph ph-layout" aria-hidden="true"></i>
+              <h3>Frontend</h3>
+            </div>
+            <div class="skill-list">
+              <div class="skill-item">
+                <div class="skill-icon html">
+                  <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M5.902 27.201L3.655 2h24.69l-2.25 25.197L15.985 30z"/><path fill="currentColor" d="M16 27.858l8.17-2.265 1.922-21.532H16z" opacity=".5"/><path fill="#fff" d="M16 13.407h-4.09l-.282-3.165H16V7.151H8.25l.074.83.759 8.517H16zm0 8.548l-.014.004-3.442-.929-.22-2.465H9.221l.433 4.852 6.332 1.758.014-.004z"/><path fill="#fff" d="M15.989 13.407v3.091h3.806l-.358 4.003-3.448.93v3.208l6.337-1.757.046-.522.726-8.131.076-.822h-.836zm0-6.256v3.091h7.466l.062-.694.141-1.567.074-.83z"/></svg>
+                </div>
+                <span>HTML5</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon css">
+                  <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M5.902 27.201L3.656 2h24.688l-2.249 25.197L15.985 30z"/><path fill="currentColor" d="M16 27.858l8.17-2.265 1.922-21.532H16z" opacity=".5"/><path fill="#fff" d="M16 13.428H9.953l.197 2.226H16v-2.226zm0-6.286H7.258l.2 2.225H16V7.142zm0 12.592h-.014l-3.442-.93-.22-2.465H10.22l.433 4.853L16 22.85v-3.116zm6.799-6.306H16v2.226h4.612l-.432 4.843-4.18 1.129v3.116l6.335-1.756.047-.52.726-8.13.076-.823-.385-.085zm.197-6.286H16v2.225h7.266l-.27 3.01H16v2.226h7.046l-.076.822-.726 8.13-.046.521-6.184 1.721v3.208l.014-.004 6.337-1.757.046-.521.726-8.13.076-.823.433-4.853.2-2.225.273-3.01.181-2.03z" opacity=".6"/><path fill="#fff" d="M16 13.428v2.226h5.846l-.197 2.2H16v2.226h5.444l-.432 4.843-4.012 1.129v3.116l6.016-1.666.047-.52.726-8.13.076-.823.433-4.853.2-2.225H16v2.477z"/></svg>
+                </div>
+                <span>CSS3</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon js">
+                  <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="#f7df1e" d="M0 0h32v32H0z"/><path d="M9.781 26.539c.61 1.017 1.414 1.765 2.827 1.765 1.187 0 1.945-.593 1.945-1.41 0-.98-.78-1.327-2.087-1.898l-.717-.308c-2.07-.881-3.447-1.986-3.447-4.319 0-2.15 1.638-3.787 4.196-3.787 1.821 0 3.13.632 4.073 2.29l-2.23 1.43c-.49-.878-1.018-1.224-1.843-1.224-.839 0-1.37.532-1.37 1.224 0 .857.532 1.205 1.76 1.737l.717.308c2.44 1.046 3.818 2.113 3.818 4.512 0 2.587-2.033 3.994-4.76 3.994-2.666 0-4.39-1.27-5.23-2.933zm10.67.285c.695 1.162 1.328 2.143 2.834 2.143 1.447 0 2.36-.566 2.36-2.765V16.87h2.744v9.37c0 4.556-2.67 6.625-6.57 6.625-3.526 0-5.568-1.826-6.611-4.02z"/></svg>
+                </div>
+                <span>JavaScript</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Backend -->
+          <div class="skill-category reveal">
+            <div class="skill-category-header">
+              <i class="ph ph-database" aria-hidden="true"></i>
+              <h3>Backend & Database</h3>
+            </div>
+            <div class="skill-list">
+              <div class="skill-item">
+                <div class="skill-icon php">
+                  <svg viewBox="0 0 32 32" aria-hidden="true"><ellipse cx="16" cy="16" rx="16" ry="8" fill="#8892bf"/><path fill="#fff" d="M8.5 13h1.5l-.3 1.5H11c1.1 0 1.8.5 1.5 1.8l-.4 2.2h-1.5l.4-2c.1-.5 0-.8-.5-.8h-1l-.6 2.8H7.5zm6 0h3c1.2 0 1.8.8 1.5 2-.3 1.3-1.3 2-2.5 2h-1.3l-.4 1.5h-1.5zm1.3 1.2l-.4 1.5h1c.5 0 .9-.3 1-.8.1-.5-.1-.7-.6-.7zm3.7-1.2h1.5l-.3 1.5H22c1.1 0 1.8.5 1.5 1.8l-.4 2.2h-1.5l.4-2c.1-.5 0-.8-.5-.8h-1l-.6 2.8h-1.5z"/></svg>
+                </div>
+                <span>PHP</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon mysql">
+                  <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="#00758f" d="M3 16.9c0-3.7 2.5-6.9 6-7.7V7.6C4.4 8.5 1 12.3 1 16.9s3.4 8.4 8 9.3v-1.6c-3.5-.8-6-4-6-7.7z"/><path fill="#f29111" d="M16 7c-5.5 0-10 4.5-10 10s4.5 10 10 10 10-4.5 10-10S21.5 7 16 7zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z"/><path fill="#00758f" d="M29 7.6v1.6c3.5.8 6 4 6 7.7s-2.5 6.9-6 7.7v1.6c4.6-.9 8-4.7 8-9.3S33.6 8.5 29 7.6z" transform="translate(-6)"/></svg>
+                </div>
+                <span>MySQL</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mobile -->
+          <div class="skill-category reveal">
+            <div class="skill-category-header">
+              <i class="ph ph-device-mobile" aria-hidden="true"></i>
+              <h3>Mobile Development</h3>
+            </div>
+            <div class="skill-list">
+              <div class="skill-item">
+                <div class="skill-icon android">
+                  <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="#3ddc84" d="M6.4 10.5A9.6 9.6 0 0 1 16 5.1a9.6 9.6 0 0 1 9.6 5.4H6.4zm-2 1.5h23.2c.3 0 .4.3.4.5v11c0 .3-.2.5-.4.5H4.4c-.3 0-.4-.3-.4-.5v-11c0-.3.2-.5.4-.5zm3.6-6l-2-3.3m16 3.3l2-3.3M11 11v10m10-10v10"/><circle cx="11" cy="8" r="1" fill="#3ddc84"/><circle cx="21" cy="8" r="1" fill="#3ddc84"/></svg>
+                </div>
+                <span>Android Dev</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon java">
+                  <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="#e76f00" d="M11.5 22.9s-1 .6.7.8c2 .2 3 .2 5.2-.2 0 0 .6.4 1.4.7-5 2.1-11.2-.1-7.3-1.3zm-.6-2.7s-1.1.8.6 1c2.2.2 4 .2 7-.3 0 0 .4.4 1 .6-6.2 1.8-13.1.2-8.6-1.3z"/><path fill="#e76f00" d="M17.5 14.7c1.3 1.5-.3 2.8-.3 2.8s3.2-1.7 1.7-3.7c-1.4-1.9-2.4-2.8 3.3-6 0 0-9.1 2.3-4.7 6.9z"/><path fill="#e76f00" d="M24.6 25.2s.7.6-.8.9c-2.9.9-12.1 1.1-14.6.1-1-.4.8-1 1.4-1.1.5-.1.8-.1.8-.1-.9-.7-6.2 1.3-2.7 1.9 9.7 1.5 17.7-.7 15.9-1.7zm-13.1-9.6s-4.3 1-.9 1.4c1.6.2 4.7.1 7.6-.1 2.4-.2 4.7-.5 4.7-.5s-.8.4-1.4.8c-5.5 1.5-16.2.8-13.1-.7 2.5-1.4 4.6-1.3 3.1-.9zm10.2 5.7c5.6-2.9 3-5.8 1.2-5.4-.4.1-.6.2-.6.2s.2-.3.5-.4c3.8-1.3 6.7 3.9-1.2 6-.1 0 .1-.1.1-.4z"/><path fill="#e76f00" d="M18.8 3s2.5 2.5-2.3 6.3c-3.8 3-1.4 4.7 0 6.7-2.2-2-3.8-3.8-2.7-5.4C15.5 8.3 20 7.1 18.8 3z"/></svg>
+                </div>
+                <span>Java (Android)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tools -->
+          <div class="skill-category reveal">
+            <div class="skill-category-header">
+              <i class="ph ph-wrench" aria-hidden="true"></i>
+              <h3>Tools & Platforms</h3>
+            </div>
+            <div class="skill-list">
+              <div class="skill-item">
+                <div class="skill-icon git">
+                  <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="#f05030" d="M29.5 13.9L18.1 2.5a1.7 1.7 0 0 0-2.4 0l-2.4 2.4 3 3a2 2 0 0 1 2.5 2.6l2.9 2.9a2 2 0 1 1-1.2 1.2l-2.7-2.7v7a2 2 0 1 1-1.6 0V11.7a2 2 0 0 1-1.1-2.6L11.9 6.3 2.5 15.7a1.7 1.7 0 0 0 0 2.4l11.4 11.4a1.7 1.7 0 0 0 2.4 0l13.2-13.2a1.7 1.7 0 0 0 0-2.4z"/></svg>
+                </div>
+                <span>Git</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon github">
+                  <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 2a14 14 0 0 0-4.4 27.3c.7.1 1-.3 1-.7v-2.5c-3.9.8-4.7-1.9-4.7-1.9-.6-1.6-1.5-2-1.5-2-1.2-.8.1-.8.1-.8 1.4.1 2.1 1.4 2.1 1.4 1.2 2.1 3.2 1.5 4 1.1.1-.9.5-1.5.9-1.8-3-.3-6.2-1.5-6.2-6.8 0-1.5.5-2.7 1.4-3.7-.1-.4-.6-1.8.1-3.7 0 0 1.1-.4 3.7 1.4a12.8 12.8 0 0 1 6.7 0c2.6-1.7 3.7-1.4 3.7-1.4.7 1.9.3 3.3.1 3.7.9 1 1.4 2.2 1.4 3.7 0 5.3-3.2 6.5-6.2 6.8.5.4 1 1.2 1 2.5v3.7c0 .4.2.8 1 .7A14 14 0 0 0 16 2z"/></svg>
+                </div>
+                <span>GitHub</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon vscode">
+                  <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="#007acc" d="M29.4 3.9L22 .4a2 2 0 0 0-2.3.4l-12.4 11.3L2.6 8.6A1.3 1.3 0 0 0 1 8.7L.3 9.4a1.3 1.3 0 0 0 0 1.8L3.8 15 .3 18.8a1.3 1.3 0 0 0 0 1.8l.7.7a1.3 1.3 0 0 0 1.7.1l4.6-3.5L19.7 29.2a2 2 0 0 0 2.3.4l7.4-3.5a2 2 0 0 0 1.1-1.8V5.7a2 2 0 0 0-1.1-1.8zM22 23.4l-10.5-8L22 8.6v14.8z"/></svg>
+                </div>
+                <span>VS Code</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon xampp">
+                  <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="4" fill="#fb7a24"/><text x="16" y="22" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">X</text></svg>
+                </div>
+                <span>XAMPP</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon figma">
+                  <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="#f24e1e" d="M10 28a4 4 0 0 0 4-4v-4h-4a4 4 0 0 0 0 8z"/><path fill="#ff7262" d="M6 16a4 4 0 0 1 4-4h4v8h-4a4 4 0 0 1-4-4z"/><path fill="#a259ff" d="M6 8a4 4 0 0 1 4-4h4v8h-4A4 4 0 0 1 6 8z"/><path fill="#0acf83" d="M14 4h4a4 4 0 0 1 0 8h-4V4z"/><circle cx="22" cy="16" r="4" fill="#1abcfe"/></svg>
+                </div>
+                <span>Figma</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── PROJECTS ──────────────────────────────────────────── -->
+    <section class="section" id="projects" aria-labelledby="projects-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">What I've built</span>
+          <h2 class="section-title" id="projects-heading">Projects</h2>
+        </div>
+
+        <!-- Capstone / Featured Project -->
+        <div class="featured-project reveal">
+          <div class="featured-badge">
+            <i class="ph ph-star-four" aria-hidden="true"></i> Featured Project
+          </div>
+          <div class="featured-project-grid">
+            <div class="featured-project-image">
+              <img src="images/3.png" alt="Personal Developer Portfolio screenshot" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius-xl);display:block;" />
+
+            </div>
+            <div class="featured-project-info">
+              <h3>Personal Developer Portfolio</h3>
+              <p>
+                A fully responsive personal portfolio website built from scratch to showcase
+                my skills, projects, and background as a BSIT student. Designed with a clean
+                dark/light theme, smooth animations, and a working contact form — deployed on
+                InfinityFree.
+              </p>
+              <div class="project-tech-tags">
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">PHP</span>
+              </div>
+              <ul class="project-highlights">
+                <li><i class="ph ph-check-circle" aria-hidden="true"></i> Dark / light theme toggle with persistent preference</li>
+                <li><i class="ph ph-check-circle" aria-hidden="true"></i> Fully responsive across mobile, tablet, and desktop</li>
+                <li><i class="ph ph-check-circle" aria-hidden="true"></i> Working contact form with PHP mail handler</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://github.com/yourusername/portfolio" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                  <i class="ph ph-github-logo" aria-hidden="true"></i> View Code
+                </a>
+                <a href="#" class="btn btn-primary btn-sm">
+                  <i class="ph ph-arrow-square-out" aria-hidden="true"></i> Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- More projects coming soon -->
+        <div class="projects-grid">
+          <article class="project-card reveal" style="grid-column: 1 / -1; text-align: center; padding: var(--space-10);">
+            <div class="project-card-body" style="display:flex;flex-direction:column;align-items:center;gap:var(--space-3);">
+              <i class="ph ph-code" aria-hidden="true" style="font-size:2rem;color:var(--accent-blue);"></i>
+              <h3 style="margin:0;">More projects on the way</h3>
+              <p style="color:var(--text-secondary);margin:0;">Currently working on new projects. Check back soon or visit my GitHub.</p>
+              <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="margin-top:var(--space-2);">
+                <i class="ph ph-github-logo" aria-hidden="true"></i> GitHub
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── EDUCATION & EXPERIENCE ───────────────────────────── -->
+    <section class="section section-alt" id="education" aria-labelledby="education-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">My journey</span>
+          <h2 class="section-title" id="education-heading">Education & Experience</h2>
+        </div>
+
+        <div class="timeline">
+
+          <!-- Education -->
+          <div class="timeline-group reveal">
+            <div class="timeline-group-label">
+              <i class="ph ph-graduation-cap" aria-hidden="true"></i> Education
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot" aria-hidden="true"></div>
+              <div class="timeline-content">
+                <div class="timeline-header">
+                  <h3>Holy Cross of Davao College</h3>
+                  <span class="timeline-badge current">Current</span>
+                </div>
+                <p class="timeline-role">Bachelor of Science in Information Technology</p>
+                <p class="timeline-date">
+                  <i class="ph ph-calendar-blank" aria-hidden="true"></i>
+                  2023 — Present
+                </p>
+                <ul class="timeline-details">
+                  <li>Relevant coursework: Data Structures, Web Development, Database Management, Software Engineering</li>
+                  <li>Currently in 2nd year</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot" aria-hidden="true"></div>
+              <div class="timeline-content">
+                <h3>Senior High School</h3>
+                <p class="timeline-role">Senior High School Graduate</p>
+                <p class="timeline-date">
+                  <i class="ph ph-calendar-blank" aria-hidden="true"></i>
+                  Graduated 2023
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Experience -->
+          <div class="timeline-group reveal">
+            <div class="timeline-group-label">
+              <i class="ph ph-briefcase" aria-hidden="true"></i> Experience
+            </div>
+
+            <div class="timeline-item">
+             
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── CONTACT ───────────────────────────────────────────── -->
+    <section class="section" id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Let's connect</span>
+          <h2 class="section-title" id="contact-heading">Get In Touch</h2>
+          <p class="section-subtitle">
+            Whether you have an opportunity, a project idea, or just want to say hello —
+            my inbox is always open.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <h3>Contact Information</h3>
+            <p>Feel free to reach out through any of these channels. I'll get back to you as soon as possible.</p>
+
+            <div class="contact-items">
+              <a href="mailto:larshonculada2005@gmail.com" class="contact-item">
+                <div class="contact-item-icon">
+                  <i class="ph ph-envelope-simple" aria-hidden="true"></i>
+                </div>
+                <div>
+                  <strong>Email</strong>
+                  <span>larshonculada2005@gmail.com</span>
+                </div>
+              </a>
+              <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" class="contact-item">
+                <div class="contact-item-icon">
+                  <i class="ph ph-github-logo" aria-hidden="true"></i>
+                </div>
+                <div>
+                  <strong>GitHub</strong>
+                  <span>github.com/yourusername</span>
+                </div>
+              </a>
+              <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" class="contact-item">
+                <div class="contact-item-icon">
+                  <i class="ph ph-linkedin-logo" aria-hidden="true"></i>
+                </div>
+                <div>
+                  <strong>LinkedIn</strong>
+                  <span>linkedin.com/in/yourusername</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-form-wrapper reveal">
+            <form class="contact-form" id="contactForm" novalidate aria-label="Contact form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" id="name" name="name" placeholder="Your name" required autocomplete="name" />
+                  <span class="form-error" id="nameError" role="alert"></span>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email" />
+                  <span class="form-error" id="emailError" role="alert"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="What's this about?" required />
+                <span class="form-error" id="subjectError" role="alert"></span>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Your message here..." required></textarea>
+                <span class="form-error" id="messageError" role="alert"></span>
+              </div>
+              <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+                <i class="ph ph-paper-plane-tilt" aria-hidden="true"></i>
+                <span>Send Message</span>
+              </button>
+              <div class="form-success" id="formSuccess" role="status" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── FOOTER ───────────────────────────────────────────────── -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <a href="#hero" class="nav-logo" aria-label="Back to top">
+          <img src="images/2.png" alt="Lars Steve Logo" class="logo-img" />
+        </a>
+        <p>Student Developer & Aspiring Software Engineer</p>
+      </div>
+
+      <div class="footer-socials">
+        <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+          <i class="ph ph-github-logo" aria-hidden="true"></i>
+        </a>
+        <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+          <i class="ph ph-linkedin-logo" aria-hidden="true"></i>
+        </a>
+        <a href="mailto:larshonculada2005@gmail.com" class="social-link" aria-label="Email">
+          <i class="ph ph-envelope-simple" aria-hidden="true"></i>
+        </a>
+      </div>
+
+      <p class="footer-copy">
+        &copy; <span id="footerYear"></span> Lars Steve. Built with care.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
+    <i class="ph ph-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/typewriter.js"></script>
+  <script src="js/contact.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
