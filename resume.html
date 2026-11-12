@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Larsteve Honculada | Resume</title>
+  <style>
+    /* ── Loader ── */
+    #loader {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      background: #0a0f1e;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+    #loader.hide {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .loader-ring {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      border: 3px solid rgba(255,255,255,0.08);
+      border-top-color: #4f8ef7;
+      border-right-color: #a78bfa;
+      animation: spin 0.9s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    .loader-initials {
+      position: absolute;
+      font-family: 'Arial', sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      background: linear-gradient(135deg, #4f8ef7, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .loader-ring-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .loader-text {
+      font-family: 'Arial', sans-serif;
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Arial', sans-serif;
+      font-size: 14px;
+      color: #111;
+      background: #e5e5e5;
+      line-height: 1.5;
+    }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    /* ── Top bar (screen only) ── */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 24px;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+      font-size: 13px;
+    }
+    .topbar a {
+      color: #333;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .topbar a:hover { color: #000; }
+    .btn-save {
+      background: #111;
+      color: #fff;
+      border: none;
+      padding: 7px 18px;
+      border-radius: 5px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .btn-save:hover { background: #333; }
+
+    /* ── Page (the white resume sheet) ── */
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 24px auto;
+      background: #fff;
+      padding: 18mm 16mm 14mm;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.15);
+    }
+
+    /* ── Header ── */
+    .cv-header {
+      text-align: center;
+      padding-bottom: 12px;
+      margin-bottom: 14px;
+      border-bottom: 2px solid #111;
+    }
+    .cv-name {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: #111;
+      text-transform: uppercase;
+    }
+    .cv-role {
+      font-size: 13px;
+      color: #555;
+      margin-top: 3px;
+      font-style: italic;
+    }
+    .cv-contact {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px 20px;
+      margin-top: 8px;
+    }
+    .cv-contact span {
+      font-size: 12px;
+      color: #333;
+    }
+    .cv-contact span::before {
+      margin-right: 3px;
+    }
+
+    /* ── Section ── */
+    .cv-section {
+      margin-bottom: 16px;
+    }
+    .cv-section-title {
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #111;
+      margin-bottom: 4px;
+    }
+    .cv-divider {
+      border: none;
+      border-top: 1.5px solid #111;
+      margin-bottom: 10px;
+    }
+
+    /* ── Entry ── */
+    .cv-entry {
+      margin-bottom: 10px;
+    }
+    .cv-entry:last-child { margin-bottom: 0; }
+
+    .cv-entry-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .cv-org {
+      font-weight: 700;
+      font-size: 13.5px;
+      color: #111;
+    }
+    .cv-date {
+      font-size: 12px;
+      color: #555;
+      white-space: nowrap;
+      font-style: italic;
+    }
+    .cv-role-title {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #333;
+      margin-top: 1px;
+      font-style: italic;
+    }
+    .cv-desc {
+      font-size: 12.5px;
+      color: #333;
+      margin-top: 4px;
+      line-height: 1.6;
+    }
+
+    /* ── Skills grid ── */
+    .cv-skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px 0;
+    }
+    .cv-skills-col li {
+      font-size: 12.5px;
+      color: #333;
+      padding: 2px 0 2px 14px;
+      position: relative;
+    }
+    .cv-skills-col li::before {
+      content: '•';
+      position: absolute;
+      left: 2px;
+      color: #111;
+    }
+
+    /* ══════════════════════════════════════
+       PRINT — fits one A4 / bond paper page
+    ═══════════════════════════════════════ */
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+    @media print {
+      body    { background: #fff; }
+      .topbar { display: none !important; }
+      #loader { display: none !important; }
+      .page {
+        width: 100%;
+        min-height: 0;
+        margin: 0;
+        padding: 14mm 14mm 10mm;
+        box-shadow: none;
+      }
+      /* Scale everything down just enough to fit one page */
+      .cv-name            { font-size: 22px; }
+      .cv-role            { font-size: 11px; }
+      .cv-contact span    { font-size: 10.5px; }
+      .cv-section-title   { font-size: 11px; }
+      .cv-org             { font-size: 12px; }
+      .cv-date            { font-size: 10.5px; }
+      .cv-role-title      { font-size: 11px; }
+      .cv-desc            { font-size: 11px; line-height: 1.45; }
+      .cv-skills-col li   { font-size: 11px; }
+      .cv-section         { margin-bottom: 11px; }
+      .cv-entry           { margin-bottom: 8px; }
+      .cv-header          { padding-bottom: 8px; margin-bottom: 10px; }
+      .cv-divider         { margin-bottom: 7px; }
+      a { color: #111 !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Loading screen -->
+  <div id="loader">
+    <div class="loader-ring-wrap">
+      <div class="loader-ring"></div>
+      <span class="loader-initials">LH</span>
+    </div>
+    <p class="loader-text">Loading</p>
+  </div>
+
+  <!-- Top bar -->
+  <div class="topbar">
+    <a href="index.html">&#8592; Back to Portfolio</a>
+    <button class="btn-save" onclick="window.print()">&#128438;&nbsp; Print / Save as PDF</button>
+  </div>
+
+  <!-- Resume sheet -->
+  <div class="page">
+
+    <!-- HEADER -->
+    <header class="cv-header">
+      <h1 class="cv-name">Larsteve Honculada</h1>
+      <p class="cv-role">Student Developer &amp; Aspiring Software Engineer</p>
+      <div class="cv-contact">
+        <span>&#128222; +63 XXX XXX XXXX</span>
+        <span>&#9993; larshonculada2005@gmail.com</span>
+        <span>&#128205; Davao City, Philippines</span>
+        <span>&#128279; github.com/larshonculada2005-arch</span>
+        <span>&#128279; facebook.com/iwanmoto.ahh</span>
+      </div>
+    </header>
+
+    <!-- ABOUT ME -->
+    <section class="cv-section">
+      <h2 class="cv-section-title">About Me</h2>
+      <div class="cv-divider"></div>
+      <p class="cv-desc">
+        Motivated BSIT student with a strong foundation in web, mobile, and software development.
+        Experienced in building responsive, user-focused applications from concept to deployment.
+        Passionate about clean code and thoughtful design, turning ideas into functional products.
+        Eager to contribute technical skills and a fast-learning mindset to a development team.
+      </p>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="cv-section">
+      <h2 class="cv-section-title">Education</h2>
+      <div class="cv-divider"></div>
+
+      <div class="cv-entry">
+        <div class="cv-entry-top">
+          <span class="cv-org">Holy Cross of Davao College</span>
+          <span class="cv-date">2023 – Present</span>
+        </div>
+        <p class="cv-role-title">Bachelor of Science in Information Technology</p>
+        <p class="cv-desc">
+          Currently in 2nd year. Relevant coursework: Data Structures, Web Development,
+          Database Management, and Software Engineering.
+        </p>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-entry-top">
+          <span class="cv-org">Senior High School</span>
+          <span class="cv-date">Graduated 2023</span>
+        </div>
+        <p class="cv-role-title">Senior High School Graduate</p>
+      </div>
+    </section>
+
+    <!-- WORK EXPERIENCE -->
+    <section class="cv-section">
+      <h2 class="cv-section-title">Work Experience</h2>
+      <div class="cv-divider"></div>
+
+      <div class="cv-entry">
+        <div class="cv-entry-top">
+          <span class="cv-org">Personal Developer Portfolio</span>
+          <span class="cv-date">2026 – Present</span>
+        </div>
+        <p class="cv-role-title">Full-Stack Web Project</p>
+        <p class="cv-desc">
+          Designed and built a fully responsive portfolio website from scratch using vanilla
+          HTML, CSS, and JavaScript. Implemented a persistent dark/light theme toggle and
+          smooth scroll-reveal animations. Built a working PHP contact form and deployed
+          the site on InfinityFree.
+        </p>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-entry-top">
+          <span class="cv-org">Academic Coursework — HCDC</span>
+          <span class="cv-date">2023 – Present</span>
+        </div>
+        <p class="cv-role-title">BSIT Student Projects</p>
+        <p class="cv-desc">
+          Built PHP and MySQL web applications with XAMPP. Developed Android applications
+          in Java using Android Studio, building and testing APKs on emulator and device.
+          Applied software engineering and
+          database management principles across multiple academic projects.
+        </p>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="cv-section">
+      <h2 class="cv-section-title">Skills</h2>
+      <div class="cv-divider"></div>
+      <div class="cv-skills-grid">
+        <ul class="cv-skills-col">
+          <li>HTML5 &amp; CSS3</li>
+          <li>JavaScript</li>
+          <li>PHP</li>
+        </ul>
+        <ul class="cv-skills-col">
+          <li>MySQL</li>
+          <li>Java (Android)</li>
+          <li>Git &amp; GitHub</li>
+        </ul>
+        <ul class="cv-skills-col">
+          <li>VS Code / XAMPP</li>
+          <li>Android Studio</li>
+          <li>Figma (UI/UX)</li>
+          <li>Responsive Design</li>
+        </ul>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    window.addEventListener('load', function () {
+      var loader = document.getElementById('loader');
+      if (loader) {
+        setTimeout(function () {
+          loader.classList.add('hide');
+        }, 400);
+      }
+    });
+  </script>
+
+</body>
+</html>
