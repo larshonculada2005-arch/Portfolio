@@ -1,0 +1,56 @@
+# ─── InfinityFree / Apache configuration ───────────────────────
+
+# Set default charset
+AddDefaultCharset UTF-8
+
+# ─── Hide .html extensions from URLs ───────────────────────────
+# e.g. /resume.html is accessible as /resume
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # If the request is for an actual file or directory, serve it as-is
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-f
+
+  # Rewrite /page → /page.html internally (no redirect, URL stays clean)
+  RewriteRule ^([^.]+)$ $1.html [L]
+
+  # If someone visits /resume.html directly, redirect them to /resume
+  RewriteCond %{THE_REQUEST} /([^.]+)\.html[\s?] [NC]
+  RewriteRule ^ /%1 [R=301,L]
+</IfModule>
+
+# Serve correct MIME types
+AddType text/css         .css
+AddType text/javascript  .js
+AddType application/pdf  .pdf
+
+# Enable compression (if mod_deflate is available)
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript
+</IfModule>
+
+# Browser caching
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css              "access plus 1 month"
+  ExpiresByType text/javascript       "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType image/png             "access plus 1 month"
+  ExpiresByType image/jpg             "access plus 1 month"
+  ExpiresByType image/jpeg            "access plus 1 month"
+  ExpiresByType image/gif             "access plus 1 month"
+  ExpiresByType image/webp            "access plus 1 month"
+</IfModule>
+
+# Prevent directory listing
+Options -Indexes
+
+# Custom 404 — redirect to homepage
+ErrorDocument 404 /index.html
+
+# Block direct access to PHP files except mail.php
+<FilesMatch "^(?!mail\.php$).*\.php$">
+  Order Allow,Deny
+  Deny from all
+</FilesMatch>
