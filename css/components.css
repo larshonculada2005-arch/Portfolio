@@ -416,3 +416,17 @@
   transform: translateY(-4px);
   box-shadow: 0 8px 32px rgba(79, 142, 247, 0.4);
 }
+
+/* ─── Devicon brand logos in skill items ───────────────────── */
+.skill-icon i[class*="devicon"] {
+  font-size: 28px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* GitHub is dark — invert it on dark theme for visibility */
+[data-theme="dark"] .devicon-github-original {
+  color: #f0f4ff !important;
+}
