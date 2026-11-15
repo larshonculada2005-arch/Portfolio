@@ -477,13 +477,11 @@
         <div class="cert-grid">
 
           <!-- Certificate 1 -->
-          <div class="cert-card reveal">
+          <div class="cert-card reveal" data-cert-img="images/cert-cpp-advanced.jpg" data-cert-title="C++ Advanced" data-cert-issuer="Cisco Networking Academy" data-cert-date="Apr 04, 2025" role="button" tabindex="0" aria-label="View C++ Advanced certificate">
             <div class="cert-img-wrap">
               <img src="images/cert-cpp-advanced.jpg" alt="C++ Advanced Certificate" class="cert-img" />
               <div class="cert-overlay">
-                <a href="images/cert-cpp-advanced.jpg" target="_blank" rel="noopener noreferrer" class="cert-view-btn">
-                  <i class="ph ph-eye" aria-hidden="true"></i> View
-                </a>
+                <span class="cert-view-btn"><i class="ph ph-eye" aria-hidden="true"></i> View</span>
               </div>
             </div>
             <div class="cert-info">
@@ -495,13 +493,11 @@
           </div>
 
           <!-- Certificate 2 -->
-          <div class="cert-card reveal">
+          <div class="cert-card reveal" data-cert-img="images/cert-ccna-intro.jpg" data-cert-title="CCNA: Introduction to Networks" data-cert-issuer="Cisco Networking Academy" data-cert-date="Apr 04, 2025" role="button" tabindex="0" aria-label="View CCNA Introduction to Networks certificate">
             <div class="cert-img-wrap">
               <img src="images/cert-ccna-intro.jpg" alt="CCNA Introduction to Networks Certificate" class="cert-img" />
               <div class="cert-overlay">
-                <a href="images/cert-ccna-intro.jpg" target="_blank" rel="noopener noreferrer" class="cert-view-btn">
-                  <i class="ph ph-eye" aria-hidden="true"></i> View
-                </a>
+                <span class="cert-view-btn"><i class="ph ph-eye" aria-hidden="true"></i> View</span>
               </div>
             </div>
             <div class="cert-info">
@@ -513,13 +509,11 @@
           </div>
 
           <!-- Certificate 3 -->
-          <div class="cert-card reveal">
+          <div class="cert-card reveal" data-cert-img="images/cert-ccna-switching.jpg" data-cert-title="CCNA: Switching, Routing &amp; Wireless Essentials" data-cert-issuer="Cisco Networking Academy" data-cert-date="Dec 15, 2025" role="button" tabindex="0" aria-label="View CCNA Switching Routing and Wireless Essentials certificate">
             <div class="cert-img-wrap">
               <img src="images/cert-ccna-switching.jpg" alt="CCNA Switching, Routing, and Wireless Essentials Certificate" class="cert-img" />
               <div class="cert-overlay">
-                <a href="images/cert-ccna-switching.jpg" target="_blank" rel="noopener noreferrer" class="cert-view-btn">
-                  <i class="ph ph-eye" aria-hidden="true"></i> View
-                </a>
+                <span class="cert-view-btn"><i class="ph ph-eye" aria-hidden="true"></i> View</span>
               </div>
             </div>
             <div class="cert-info">
@@ -531,13 +525,11 @@
           </div>
 
           <!-- Certificate 4 -->
-          <div class="cert-card reveal">
+          <div class="cert-card reveal" data-cert-img="images/cert-cpp-essentials.jpg" data-cert-title="Partner: CPA – Programming Essentials in C++" data-cert-issuer="Cisco Networking Academy" data-cert-date="Nov 26, 2024" role="button" tabindex="0" aria-label="View Programming Essentials in C++ certificate">
             <div class="cert-img-wrap">
               <img src="images/cert-cpp-essentials.jpg" alt="Programming Essentials in C++ Certificate" class="cert-img" />
               <div class="cert-overlay">
-                <a href="images/cert-cpp-essentials.jpg" target="_blank" rel="noopener noreferrer" class="cert-view-btn">
-                  <i class="ph ph-eye" aria-hidden="true"></i> View
-                </a>
+                <span class="cert-view-btn"><i class="ph ph-eye" aria-hidden="true"></i> View</span>
               </div>
             </div>
             <div class="cert-info">
@@ -670,6 +662,24 @@
     <i class="ph ph-arrow-up" aria-hidden="true"></i>
   </button>
 
+  <!-- ─── CERTIFICATE MODAL ───────────────────────────────────── -->
+  <div class="cert-modal" id="certModal" role="dialog" aria-modal="true" aria-label="Certificate viewer">
+    <div class="cert-modal-backdrop" id="certModalBackdrop"></div>
+    <div class="cert-modal-box">
+      <button class="cert-modal-close" id="certModalClose" aria-label="Close">
+        <i class="ph ph-x" aria-hidden="true"></i>
+      </button>
+      <div class="cert-modal-img-wrap">
+        <img src="" alt="Certificate" id="certModalImg" class="cert-modal-img" />
+      </div>
+      <div class="cert-modal-info">
+        <h3 id="certModalTitle"></h3>
+        <p id="certModalIssuer"></p>
+        <span id="certModalDate"></span>
+      </div>
+    </div>
+  </div>
+
   <!-- Scripts -->
   <script src="js/data.js"></script>
   <script src="js/theme.js"></script>
@@ -677,6 +687,7 @@
   <script src="js/animations.js"></script>
   <script src="js/typewriter.js"></script>
   <script src="js/contact.js"></script>
+  <script src="js/certModal.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
